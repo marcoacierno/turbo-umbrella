@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "payform"
+version = "0.1.0"
+description = ""
+authors = ["Marco Acierno <marcoaciernoemail@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.1"
+django-environ = "^0.9.0"
+gunicorn = "^20.1.0"
+whitenoise = {version = "^6.2.0", extras = ["brotli"]}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
