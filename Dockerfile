@@ -13,6 +13,7 @@ RUN poetry install
 COPY . .
 
 RUN SECRET_KEY=abc poetry run python manage.py collectstatic --noinput
+RUN SECRET_KEY=abc poetry run python manage.py tailwind build
 
 EXPOSE 8080
 

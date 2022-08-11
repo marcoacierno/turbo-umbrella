@@ -35,6 +35,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-browser-reload"
+version = "1.6.0"
+description = "Automatically reload your browser in development."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "django-environ"
 version = "0.9.0"
 description = "A package that allows you to utilize 12factor inspired environment variables to configure your Django application."
@@ -46,6 +57,18 @@ python-versions = ">=3.4,<4"
 testing = ["pytest (>=4.6.11)", "coverage[toml] (>=5.0a4)"]
 docs = ["sphinx-notfound-page", "sphinx (>=3.5.0)", "furo (>=2021.8.17b43,<2021.9.0)"]
 develop = ["sphinx-notfound-page", "sphinx (>=3.5.0)", "furo (>=2021.8.17b43,<2021.9.0)", "pytest (>=4.6.11)", "coverage[toml] (>=5.0a4)"]
+
+[[package]]
+name = "django-tailwind"
+version = "3.4.0"
+description = "Tailwind CSS Framework for Django projects"
+category = "main"
+optional = false
+python-versions = ">=3.8,<4.0"
+
+[package.dependencies]
+django = ">=3.2.14"
+django-browser-reload = ">=1.6.0,<2.0.0"
 
 [[package]]
 name = "gunicorn"
@@ -94,13 +117,15 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "bcd49efc5ba8b3df9df29e735594fdae4135e4c9d1fb5265a3d1649d16e3951e"
+content-hash = "8742f50f800638a16333775257f80c533145288cf01de2f0fdc4db862ceb5c42"
 
 [metadata.files]
 asgiref = []
 brotli = []
 django = []
+django-browser-reload = []
 django-environ = []
+django-tailwind = []
 gunicorn = []
 sqlparse = [
     {file = "sqlparse-0.4.2-py3-none-any.whl", hash = "sha256:48719e356bb8b42991bdbb1e8b83223757b93789c00910a616a071910ca4a64d"},

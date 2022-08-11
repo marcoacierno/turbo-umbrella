@@ -1,0 +1,35 @@
+{% load tailwind_tags %}
+<!doctype html>
+<html>
+  <head>
+    <title>Signup</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% tailwind_css %}
+  </head>
+  <body class="bg-slate-300 min-h-screen flex items-center">
+    <div class="{{input_classes}}"></div>
+    <div class="container max-w-xl w-full m-auto">
+        <div class="p-6 bg-white border border-gray-200 shadow-md">
+            <h1 class="font-medium text-xl">Signup</h2>
+            <p>Blablablabla</p>
+            <form action="/" method="post" class="mt-5 grid gap-2">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="fieldWrapper flex flex-col">
+                        <label>{{ field.label_tag }}</label>
+                        {{ field }}
+                        <p>{{ field.errors }}</p>
+                    </div>
+                {% endfor %}
+                <div class="mt-2 flex items-center justify-center">
+                    <button class="btn bg-slate-300 hover:bg-slate-400 transition-colors p-3">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </body>
+</html>
