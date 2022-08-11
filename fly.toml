@@ -39,4 +39,4 @@ processes = []
 
 [mounts]
   source="superformdata"
-  destination="/data"
+  destination="/app/data"

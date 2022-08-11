@@ -7,6 +7,11 @@ env = environ.Env(
     DEBUG=(bool, False),
     ALLOWED_HOSTS=(list, []),
     DB_PATH=(str, BASE_DIR / 'data' / 'db.sqlite3'),
+    CSRF_TRUSTED_ORIGINS=(list, []),
+    EMAIL_BACKEND=(str, 'django.core.mail.backends.console.EmailBackend'),
+    EMAIL_HOST=(str, 'localhost'),
+    EMAIL_HOST_PASSWORD=(str, ''),
+    EMAIL_HOST_USER=(str, ''),
 )
 
 environ.Env.read_env(BASE_DIR / '.env')
@@ -14,6 +19,9 @@ environ.Env.read_env(BASE_DIR / '.env')
 SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
+# DEBUG = True
+
+CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS')
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
@@ -105,3 +113,8 @@ TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
