@@ -1,12 +1,14 @@
 import environ
 from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 env = environ.Env(
     DEBUG=(bool, False),
     ALLOWED_HOSTS=(list, []),
+    DB_PATH=(str, BASE_DIR / 'data' / 'db.sqlite3'),
 )
 
-BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(BASE_DIR / '.env')
 
 SECRET_KEY = env('SECRET_KEY')
@@ -64,7 +66,7 @@ WSGI_APPLICATION = 'superform.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': env('DB_PATH'),
     }
 }
 
