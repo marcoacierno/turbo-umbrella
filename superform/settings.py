@@ -10,6 +10,7 @@ env = environ.Env(
     CSRF_TRUSTED_ORIGINS=(list, []),
     EMAIL_BACKEND=(str, 'django.core.mail.backends.console.EmailBackend'),
     EMAIL_HOST=(str, 'localhost'),
+    EMAIL_PORT=(int, 25),
     EMAIL_HOST_PASSWORD=(str, ''),
     EMAIL_HOST_USER=(str, ''),
 )
@@ -19,7 +20,6 @@ environ.Env.read_env(BASE_DIR / '.env')
 SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
-# DEBUG = True
 
 CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS')
 
@@ -118,3 +118,4 @@ EMAIL_BACKEND = env('EMAIL_BACKEND')
 EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env('EMAIL_PORT')
