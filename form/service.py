@@ -14,7 +14,7 @@ def signup_user(
         total_spaces_available = config.spaces_available
         in_waiting_list = Signup.objects.count() >= total_spaces_available
 
-    status = Signup.Status.PENDING_PAYMENT if not in_waiting_list else Signup.Status.IN_WAITING_LIST
+    status = Signup.Status.PENDING_PAYMENT if not in_waiting_list else Signup.Status.WAITING_LIST
 
     signup = Signup.objects.create(
         full_name=full_name,
